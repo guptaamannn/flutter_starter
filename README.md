@@ -1,16 +1,27 @@
-# flutter_starter_template
+# Flutter Todos Bloc
 
-A new Flutter project.
+Flutter Todos app from the Flutter Bloc Todos Tutorial.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Installing dependencies
 
-A few resources to get you started if this is your first Flutter project:
+- Make sure `very_good_cli` is installed.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+  - To install `very_good_cli` use:
+    ```shell
+    dart pub global activate very_good_cli
+    ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Install packages using
+  ```shell
+  very_good packages get --recursive
+  ```
+
+### Build runner
+
+While adding new models using `json_annotation` run build runner to generate part files.
+
+```shell
+dart run build_runner watch -d
+```
