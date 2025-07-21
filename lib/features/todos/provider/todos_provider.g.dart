@@ -6,23 +6,6 @@ part of 'todos_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$sharedPreferencesHash() => r'ee82ca901499dbe399ddaa3e1f851a7be5ab93b4';
-
-/// See also [sharedPreferences].
-@ProviderFor(sharedPreferences)
-final sharedPreferencesProvider = Provider<SharedPreferences>.internal(
-  sharedPreferences,
-  name: r'sharedPreferencesProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$sharedPreferencesHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef SharedPreferencesRef = ProviderRef<SharedPreferences>;
 String _$todosApiHash() => r'a00c0faabbc8dc37a6082b8a093605384bac38a3';
 
 /// See also [todosApi].

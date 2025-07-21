@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_todos/features/settings/view/settings_screen.dart';
 import 'package:flutter_todos/features/todos/provider/home_notifier.dart';
 import 'package:flutter_todos/features/todos/ui/screens/stats_screen.dart';
 import 'package:flutter_todos/features/todos/ui/screens/todos_overview_screen.dart';
@@ -14,10 +15,9 @@ class HomePage extends ConsumerWidget {
 
     return Scaffold(
       body: IndexedStack(
-        index: currentTab == HomeTab.todos ? 0 : 1,
-        children: const [TodosOverviewPage(), StatsPage()],
+        index: currentTab.index,
+        children: const [TodosOverviewPage(), StatsPage(), SettingsPage()],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         shape: const CircleBorder(),
         key: const Key('homeView_addTodo_floatingActionButton'),
@@ -38,6 +38,11 @@ class HomePage extends ConsumerWidget {
               groupValue: currentTab,
               value: HomeTab.stats,
               icon: const Icon(Icons.show_chart_rounded),
+            ),
+            _HomeTabButton(
+              groupValue: currentTab,
+              value: HomeTab.settings,
+              icon: const Icon(Icons.settings_rounded),
             ),
           ],
         ),

@@ -1,17 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_todos/core/providers/shared_preferences_provider.dart';
 import 'package:flutter_todos/features/todos/data/local_storage_todos_api.dart';
 import 'package:flutter_todos/features/todos/data/todos_api.dart';
 import 'package:flutter_todos/features/todos/data/todos_repository.dart';
 import 'package:flutter_todos/features/todos/model/todo.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 part 'todos_provider.g.dart';
-
-@Riverpod(keepAlive: true)
-SharedPreferences sharedPreferences(Ref ref) {
-  throw UnimplementedError('Should be overridden in main.dart');
-}
 
 @Riverpod(keepAlive: true)
 TodosApi todosApi(Ref ref) {
