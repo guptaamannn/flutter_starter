@@ -108,5 +108,25 @@
   "statsActiveTodoCountLabel": "Active todos",
   "@statsActiveTodoCountLabel": {
     "description": "Label text shown in the active todos count section of the Stats Page"
+  },
+  "settingsAppBarTitle": "Settings",
+  "@settingsAppBarTitle": {
+    "description": "Title text shown in the AppBar of the Settings Page"
+  },
+  "settingsThemeLabel": "Theme",
+  "@settingsThemeLabel": {
+    "description": "Label text shown in the theme dropdown of the Settings Page"
+  },
+  "settingsThemeLight": "Light",
+  "@settingsThemeLight": {
+    "description": "Option text shown in the theme dropdown of the Settings Page for the light theme"
+  },
+  "settingsThemeDark": "Dark",
+  "@settingsThemeDark": {
+    "description": "Option text shown in the theme dropdown of the Settings Page for the dark theme"
+  },
+  "settingsThemeSystem": "System",
+  "@settingsThemeSystem": {
+    "description": "Option text shown in the theme dropdown of the Settings Page for the system theme"
   }
 }

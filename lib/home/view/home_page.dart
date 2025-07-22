@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_todos/edit_todo/edit_todo.dart';
 import 'package:flutter_todos/home/home.dart';
+import 'package:flutter_todos/settings/view/view.dart';
 import 'package:flutter_todos/stats/stats.dart';
 import 'package:flutter_todos/todos_overview/todos_overview.dart';
 
@@ -24,9 +25,8 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       body: IndexedStack(
         index: selectedTab.index,
-        children: const [TodosOverviewPage(), StatsPage()],
+        children: const [TodosOverviewPage(), StatsPage(), SettingsPage()],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         shape: const CircleBorder(),
         key: const Key('homeView_addTodo_floatingActionButton'),
@@ -47,6 +47,11 @@ class HomeView extends StatelessWidget {
               groupValue: selectedTab,
               value: HomeTab.stats,
               icon: const Icon(Icons.show_chart_rounded),
+            ),
+            _HomeTabButton(
+              groupValue: selectedTab,
+              value: HomeTab.settings,
+              icon: const Icon(Icons.settings_rounded),
             ),
           ],
         ),

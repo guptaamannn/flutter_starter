@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_todos/home/home.dart';
 import 'package:flutter_todos/l10n/app_localizations.dart';
+import 'package:flutter_todos/settings/bloc/theme_bloc.dart';
 import 'package:flutter_todos/theme/theme.dart';
 import 'package:todos_repository/todos_repository.dart';
 
@@ -25,15 +26,20 @@ class AppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: FlutterTodosTheme.light,
-      darkTheme: FlutterTodosTheme.dark,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: const [
-        Locale('en'), // English
-        // Add other supported locales here
-      ],
-      home: const HomePage(),
+    return BlocBuilder<ThemeBloc, ThemeState>(
+      builder: (context, state) {
+        return MaterialApp(
+          theme: FlutterTodosTheme.light,
+          darkTheme: FlutterTodosTheme.dark,
+          themeMode: state.themeMode,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: const [
+            Locale('en'), // English
+            // Add other supported locales here
+          ],
+          home: const HomePage(),
+        );
+      },
     );
   }
 }

@@ -249,6 +249,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Active todos'**
   String get statsActiveTodoCountLabel;
+
+  /// Title text shown in the AppBar of the Settings Page
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsAppBarTitle;
+
+  /// Label text shown in the theme dropdown of the Settings Page
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get settingsThemeLabel;
+
+  /// Option text shown in the theme dropdown of the Settings Page for the light theme
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get settingsThemeLight;
+
+  /// Option text shown in the theme dropdown of the Settings Page for the dark theme
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get settingsThemeDark;
+
+  /// Option text shown in the theme dropdown of the Settings Page for the system theme
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get settingsThemeSystem;
 }
 
 class _AppLocalizationsDelegate

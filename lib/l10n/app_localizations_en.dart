@@ -89,4 +89,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get statsActiveTodoCountLabel => 'Active todos';
+
+  @override
+  String get settingsAppBarTitle => 'Settings';
+
+  @override
+  String get settingsThemeLabel => 'Theme';
+
+  @override
+  String get settingsThemeLight => 'Light';
+
+  @override
+  String get settingsThemeDark => 'Dark';
+
+  @override
+  String get settingsThemeSystem => 'System';
 }
