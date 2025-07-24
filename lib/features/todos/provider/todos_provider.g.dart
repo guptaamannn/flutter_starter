@@ -57,21 +57,5 @@ final todosProvider = AutoDisposeStreamProvider<List<Todo>>.internal(
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef TodosRef = AutoDisposeStreamProviderRef<List<Todo>>;
-String _$todoNotifierHash() => r'a8e30d5aee1c581e9b2d26d2f2e896b0c7ac405e';
-
-/// See also [TodoNotifier].
-@ProviderFor(TodoNotifier)
-final todoNotifierProvider =
-    AutoDisposeAsyncNotifierProvider<TodoNotifier, void>.internal(
-      TodoNotifier.new,
-      name: r'todoNotifierProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$todoNotifierHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
-
-typedef _$TodoNotifier = AutoDisposeAsyncNotifier<void>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

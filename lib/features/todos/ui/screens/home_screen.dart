@@ -19,7 +19,6 @@ class HomePage extends ConsumerWidget {
         children: const [TodosOverviewPage(), StatsPage(), SettingsPage()],
       ),
       floatingActionButton: FloatingActionButton(
-        shape: const CircleBorder(),
         key: const Key('homeView_addTodo_floatingActionButton'),
         onPressed: () => Navigator.of(context).push(EditTodoPage.route()),
         child: const Icon(Icons.add),

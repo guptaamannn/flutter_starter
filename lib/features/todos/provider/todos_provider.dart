@@ -24,37 +24,3 @@ TodosRepository todosRepository(Ref ref) {
 Stream<List<Todo>> todos(Ref ref) {
   return ref.watch(todosRepositoryProvider).getTodos();
 }
-
-@riverpod
-class TodoNotifier extends _$TodoNotifier {
-  @override
-  FutureOr<void> build() {}
-
-  Future<void> addTodo(Todo todo) async {
-    await ref.read(todosRepositoryProvider).saveTodo(todo);
-  }
-
-  Future<void> updateTodo(Todo todo) async {
-    await ref.read(todosRepositoryProvider).saveTodo(todo);
-  }
-
-  Future<void> deleteTodo(String id) async {
-    await ref.read(todosRepositoryProvider).deleteTodo(id);
-  }
-
-  Future<int> clearCompleted() async {
-    return await ref.read(todosRepositoryProvider).clearCompleted();
-  }
-
-  Future<int> toggleAll({required bool isCompleted}) async {
-    return await ref
-        .read(todosRepositoryProvider)
-        .completeAll(isCompleted: isCompleted);
-  }
-
-  Future<void> toggleTodo(Todo todo) async {
-    await ref
-        .read(todosRepositoryProvider)
-        .saveTodo(todo.copyWith(isCompleted: !todo.isCompleted));
-  }
-}

@@ -153,4 +153,17 @@ class TodosOverview extends _$TodosOverview {
       rethrow;
     }
   }
+
+  Future<void> clearCompleted() async {
+    try {
+      state = state.copyWith(status: TodosOverviewStatus.loading);
+      await ref.read(todosRepositoryProvider).clearCompleted();
+    } catch (e) {
+      state = state.copyWith(
+        status: TodosOverviewStatus.failure,
+        error: e.toString(),
+      );
+      rethrow;
+    }
+  }
 }
