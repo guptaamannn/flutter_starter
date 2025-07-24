@@ -74,24 +74,36 @@ class TodosOverviewView extends ConsumerWidget {
       }
     }
 
-    return CupertinoScrollbar(
-      child: ListView.builder(
-        itemCount: state.filteredTodos.length,
-        itemBuilder: (_, index) {
-          final todo = state.filteredTodos.elementAt(index);
-          return TodoListTile(
-            todo: todo,
-            onToggleCompleted: (isCompleted) async {
-              await notifier.toggleTodo(todo: todo, isCompleted: isCompleted);
-            },
-            onDismissed: (_) async {
-              await notifier.deleteTodo(todo.id);
-            },
-            onTap: () {
-              Navigator.of(context).push(EditTodoPage.route(initialTodo: todo));
-            },
-          );
-        },
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(l10n.todosOverviewAppBarTitle),
+        actions: const [
+          TodosOverviewFilterButton(),
+          TodosOverviewOptionsButton(),
+        ],
+      ),
+
+      body: CupertinoScrollbar(
+        child: ListView.builder(
+          itemCount: state.filteredTodos.length,
+          itemBuilder: (_, index) {
+            final todo = state.filteredTodos.elementAt(index);
+            return TodoListTile(
+              todo: todo,
+              onToggleCompleted: (isCompleted) async {
+                await notifier.toggleTodo(todo: todo, isCompleted: isCompleted);
+              },
+              onDismissed: (_) async {
+                await notifier.deleteTodo(todo.id);
+              },
+              onTap: () {
+                Navigator.of(
+                  context,
+                ).push(EditTodoPage.route(initialTodo: todo));
+              },
+            );
+          },
+        ),
       ),
     );
   }

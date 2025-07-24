@@ -20,10 +20,9 @@ class LocalStorageTodosApi extends TodosApi {
   void _init() {
     final raw = _plugin.getString(kKey);
     if (raw != null) {
-      final list =
-          (json.decode(raw) as List)
-              .map((e) => Todo.fromJson(Map<String, dynamic>.from(e)))
-              .toList();
+      final list = (json.decode(raw) as List)
+          .map((e) => Todo.fromJson(Map<String, dynamic>.from(e)))
+          .toList();
       _controller.add(list);
     }
   }
@@ -71,10 +70,9 @@ class LocalStorageTodosApi extends TodosApi {
 
   @override
   Future<int> completeAll({required bool isCompleted}) async {
-    final todos =
-        _controller.value
-            .map((t) => t.copyWith(isCompleted: isCompleted))
-            .toList();
+    final todos = _controller.value
+        .map((t) => t.copyWith(isCompleted: isCompleted))
+        .toList();
     await _write(todos);
     return todos.length;
   }

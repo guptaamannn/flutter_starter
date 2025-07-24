@@ -6,7 +6,7 @@ part of 'todos_overview_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$todosOverviewHash() => r'8c532f32699ac72f6ab8c37073ba434bb1a91279';
+String _$todosOverviewHash() => r'321f1741ca929af206a4e2f50301219fff19fc77';
 
 /// See also [TodosOverview].
 @ProviderFor(TodosOverview)
