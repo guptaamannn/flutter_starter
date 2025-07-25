@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_todos/core/router/app_router.dart';
 import 'package:flutter_todos/features/settings/provider/theme_provider.dart';
 import 'package:flutter_todos/l10n/app_localizations.dart';
 import 'package:flutter_todos/theme/theme.dart';
-import 'package:flutter_todos/features/todos/ui/screens/home_screen.dart';
 import 'package:flutter_todos/theme/util.dart';
 
 class App extends ConsumerWidget {
@@ -26,7 +26,8 @@ class App extends ConsumerWidget {
       designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
-      child: MaterialApp(
+      child: MaterialApp.router(
+        routerConfig: appRouter,
         debugShowCheckedModeBanner: false,
         theme: theme.light(),
         darkTheme: theme.dark(),
@@ -36,7 +37,6 @@ class App extends ConsumerWidget {
           Locale('en'), // English
           // Add other supported locales here
         ],
-        home: const HomePage(),
       ),
     );
   }
